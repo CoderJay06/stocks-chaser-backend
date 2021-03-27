@@ -1,4 +1,4 @@
-[Stocks Chaser backend repo](https://github.com/CoderJay06/stocks-chaser-frontend)
+[Stocks Chaser frontend repo](https://github.com/CoderJay06/stocks-chaser-frontend)
 
 # README
 
