@@ -8,7 +8,7 @@
    - belongs_to User
    - has_and_belongs_to_many Stocks
       :stock_quantity - integer
-                                      - portfolios_stock (- belongs_to Portfolio, -belongs_to Stock)
+                                      - portfolios_stocks (- belongs_to Portfolio, -belongs_to Stock)
 ## Stock 
    - has_and_belongs_to_many Portfolios
       :ticker - string, :name - string
