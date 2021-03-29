@@ -1,3 +1,5 @@
+[Stocks Chaser frontend repo](https://github.com/CoderJay06/stocks-chaser-frontend)
+
 # README
 
 This README would normally document whatever steps are necessary to get the
