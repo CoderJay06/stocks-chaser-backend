@@ -6,9 +6,15 @@
 
 ## Portfolio
    - belongs_to User
-   - has_and_belongs_to_many Stocks
+   - has_many PortfolioStocks
+   - has_many Stocks through PortfolioStocks
       :stock_quantity - integer
-                                      - portfolios_stocks (- belongs_to Portfolio, -belongs_to Stock)
+                                   
 ## Stock 
-   - has_and_belongs_to_many Portfolios
-      :ticker - string, :name - string
+   - has_many PortfoliosStocks
+   - has_many Portfolios through PortfolioStocks
+      :ticker - string, :name - string, :price_per_share - decimal
+
+## PortfolioStock (jointable)
+   - belongs_to Portfolio
+   - belongs_to Stock
