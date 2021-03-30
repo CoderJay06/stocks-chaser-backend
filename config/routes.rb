@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :stocks
    # api/v1/
    namespace :api do 
       namespace :v1 do 
