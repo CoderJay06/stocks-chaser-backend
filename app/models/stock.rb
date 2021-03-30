@@ -1,3 +1,4 @@
 class Stock < ApplicationRecord
-   has_and_belongs_to_many :portfolios
+   has_many :portfolio_stocks
+   has_many :portfolios, through: :portfolio_stocks
 end
