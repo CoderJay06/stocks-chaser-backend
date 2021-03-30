@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_03_30_132131) do
+ActiveRecord::Schema.define(version: 2021_03_30_184542) do
 
   create_table "portfolio_stocks", force: :cascade do |t|
     t.integer "portfolio_id", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_132131) do
   create_table "users", force: :cascade do |t|
     t.string "email"
     t.string "username"
-    t.string "password"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
