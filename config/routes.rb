@@ -1,11 +1,15 @@
 Rails.application.routes.draw do
-#   resources :portfolio_stocks
-#   resources :stocks
    # api/v1/
    namespace :api do 
       namespace :v1 do 
-         resources :portfolios
-         resources :users
+         resources :users do 
+            resources :portfolios, only: [:show]
+         end 
+
+         resources :portfolios do 
+            resources :stocks, only: [:index, :show] 
+         end 
+         
          resources :stocks
       end 
    end 
