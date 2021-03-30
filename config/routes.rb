@@ -13,5 +13,7 @@ Rails.application.routes.draw do
          resources :stocks
       end 
    end 
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+   # login/logout routes
+   delete 'sessions', controller: :sessions, action: :destroy
+   resources :sessions, only: [:create, :destroy]
 end
