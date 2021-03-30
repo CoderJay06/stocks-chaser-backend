@@ -8,6 +8,7 @@
 
 User.destroy_all
 Portfolio.destroy_all
+Stock.destroy_all
 
 stock1 = Stock.create(ticker: 'TSLA', name: 'Tesla', price_per_share: 700.00)
 stock2 = Stock.create(ticker: 'AMZN', name: 'Amazon', price_per_share: 3000.15)
