@@ -1,14 +1,16 @@
 class SessionsController < ApplicationController
-   before_action :find_user 
+   before_action :find_user, :authenticate_user, only: [:create]
    # user login
-   def create 
-      if @user && @user.authenticate(session_params[:password])
-         session[:user_id] = @user.id 
 
-         render json: @user, status: :accepted 
-      else  
-         render json: { error: "Invalid credentials" }, status: :unauthorized
-      end 
+   def create 
+      session[:user_id] = @user.id 
+
+      # render json: @user, status: :accepted 
+      render json: {
+         status: :created,
+         logged_in: true,
+         user: @user 
+      }
    end 
 
    # user logout
@@ -17,11 +19,13 @@ class SessionsController < ApplicationController
 
    private 
 
-   def session_params 
-      params.require(:user).permit(:username, :password)
+   def find_user 
+      @user = User.find_by(username: params[:username])
    end 
 
-   def find_user 
-      @user = User.find(username: session_params[:username])
+   def authenticate_user
+      unless @user && @user.authenticate(params[:password])
+         render json: { error: "Invalid credentials" }, status: :unauthorized
+      end 
    end 
 end
