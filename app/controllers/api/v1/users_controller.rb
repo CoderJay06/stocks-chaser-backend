@@ -12,7 +12,7 @@ class Api::V1::UsersController < ApplicationController
       user = User.create(user_params)
 
       if user.save 
-         render json: user 
+         render json: user
       else  
          render json: { error: 'Error signing up' }
       end 

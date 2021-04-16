@@ -39,7 +39,7 @@ class Api::V1::PortfoliosController < ApplicationController
    private 
 
    def portfolio_params 
-      params.require(:portfolio).permit(:stock_quantity)
+      params.require(:portfolio).permit(:stock_quantity, :user_id)
    end 
 
    def find_portfolio

@@ -4,13 +4,8 @@ class SessionsController < ApplicationController
 
    def create 
       session[:user_id] = @user.id 
-
+      # byebug
       render json: @user, status: :accepted 
-      # render json: {
-      #    status: :created,
-      #    logged_in: true,
-      #    user: @user 
-      # }
    end 
 
    # user logout
