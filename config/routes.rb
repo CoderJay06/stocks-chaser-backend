@@ -9,6 +9,8 @@ Rails.application.routes.draw do
          resources :portfolios do 
             resources :stocks, only: [:index, :show] 
          end 
+
+         resources :portfolio_stocks, only: [:create, :destroy, :update]
          
          resources :stocks
       end 
