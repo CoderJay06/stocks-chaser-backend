@@ -5,7 +5,8 @@ class SessionsController < ApplicationController
    def create 
       session[:user_id] = @user.id 
       # byebug
-      render json: @user, status: :accepted 
+      # need to include portfolio relationship
+      render json: @user, include: [:portfolio => { include: :stocks }], status: :accepted 
    end 
 
    # user logout
