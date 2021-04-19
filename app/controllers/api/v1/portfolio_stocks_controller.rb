@@ -12,9 +12,18 @@ class Api::V1::PortfolioStocksController < ApplicationController
       portfolio_stock = PortfolioStock.create({
          portfolio_id: params[:portfolio_stock][:portfolio][:id],
          stock_id: stock.id
-      });
+      })
+
+      # update portfoliostock and portfolio stock quantity 
+      portfolio_stock.portfolio.stock_quantity += 1
+      user_portfolio = Portfolio.find(portfolio_stock.portfolio.id)
+      user_portfolio.stock_quantity += 1
       # byebug
-      render json: portfolio_stock, include: [:stock], status: :accepted
+      if portfolio_stock.save && user_portfolio.save
+         render json: portfolio_stock, include: [:portfolio, :stock], status: :accepted
+      else 
+         render json: { error: 'Error adding this stock to your portfolio' }
+      end 
    end 
 
    def update 
