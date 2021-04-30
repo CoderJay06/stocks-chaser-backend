@@ -1,26 +1,44 @@
 [Stocks Chaser frontend repo](https://github.com/CoderJay06/stocks-chaser-frontend)
 
-# README
+# Stocks Chaser Backend
+  This is the backend for the Stocks Chaser application. It's a Ruby on Rails API that handles database tasks such as all CRUD actions for user portfolios and stocks.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation
 
-Things you may want to cover:
+Use bundler to install gem dependencies:
 
-* Ruby version
+```bash
+bundle install
+```
+Or
+```bash
+bundle i
+```
+## Setup the Server
 
-* System dependencies
+Use Rails server to get up and running on your local enviornment:
 
-* Configuration
+```bash
+rails server
+```
+Or
+```bash
+rails s
+```
 
-* Database creation
+You can also specify the port number if you like:
 
-* Database initialization
+```bash
+rails s -p 3001
+```
 
-* How to run the test suite
+## Technologies
 
-* Services (job queues, cache servers, search engines, etc.)
+* Ruby
 
-* Deployment instructions
+* Rails
 
-* ...
+* Active Record
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
