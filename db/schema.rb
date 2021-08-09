@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2021_03_30_184542) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "portfolio_stocks", force: :cascade do |t|
-    t.integer "portfolio_id", null: false
-    t.integer "stock_id", null: false
+    t.bigint "portfolio_id", null: false
+    t.bigint "stock_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["portfolio_id"], name: "index_portfolio_stocks_on_portfolio_id"
@@ -23,7 +26,7 @@ ActiveRecord::Schema.define(version: 2021_03_30_184542) do
 
   create_table "portfolios", force: :cascade do |t|
     t.integer "stock_quantity"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_portfolios_on_user_id"
