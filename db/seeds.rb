@@ -13,10 +13,10 @@ Stock.destroy_all
 stock1 = Stock.create(ticker: 'TSLA', name: 'Tesla', price_per_share: 700.00)
 stock2 = Stock.create(ticker: 'AMZN', name: 'Amazon', price_per_share: 3000.15)
 stock3 = Stock.create(ticker: 'TGT', name: 'Target', price_per_share: 200.00)
-stock4 = Stock.create(ticker: 'WLMT', name: 'Walmart', price_per_share: 133.00)
+stock4 = Stock.create(ticker: 'WMT', name: 'Walmart', price_per_share: 133.00)
 stock5 = Stock.create(ticker: 'DSNY', name: 'Disney', price_per_share: 355.00)
 stock6 = Stock.create(ticker: 'FB', name: 'Facebook', price_per_share: 285.00)
-stock7 = Stock.create(ticker: 'APPL', name: 'Apple', price_per_share: 120.00)
+stock7 = Stock.create(ticker: 'AAPL', name: 'Apple', price_per_share: 120.00)
 stock8 = Stock.create(ticker: 'MCD', name: 'Mcdonalds', price_per_share: 226.00)
 stocks = [stock1, stock2, stock3, stock4, stock5, stock6, stock7, stock8]
 
